@@ -1,0 +1,32 @@
+import { useQuery } from "@tanstack/react-query";
+import { type News, type Proposal, type Activity, type HomeContent, type CouncilMember } from "@shared/schema";
+
+export function useActivities() {
+  return useQuery<Activity[]>({
+    queryKey: ["/api/activities"],
+  });
+}
+
+export function useHomeContent() {
+  return useQuery<HomeContent>({
+    queryKey: ["/api/home-content"],
+  });
+}
+
+export function useNews() {
+  return useQuery<News[]>({
+    queryKey: ["/api/news"],
+  });
+}
+
+export function useProposals() {
+  return useQuery<Proposal[]>({
+    queryKey: ["/api/proposals"],
+  });
+}
+
+export function useCouncilMembers() {
+  return useQuery<CouncilMember[]>({
+    queryKey: ["/api/council-members"],
+  });
+}
